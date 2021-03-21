@@ -7,18 +7,30 @@ import './index.css';
 
 class App extends Component {
   constructor(){
-    this.notas = [];
+    super();
+    // this.notas = [];
+    this.state = {
+      notas:[]
+    };
   }
 
   criarNota(titulo, texto) {
-    console.log("Nota criada " + titulo + " " + texto);
+    // console.log("Nota criada " + titulo + " " + texto);
+    const novaNota = {titulo, texto};
+    const novoArrayNotas = [...this.state.notas, novaNota]
+    const novoEstado = {
+      notas:novoArrayNotas
+    }
+    // this.notas.push(novaNota);
+    this.setState(novoEstado);
   }
 
   render() {
+    // console.log("render");
     return (
       <section className="conteudo">
-        <FormularioCadastro criarNota={this.criarNota}/>
-        <ListaDeNotas notas={this.notas}/>
+        <FormularioCadastro criarNota={this.criarNota.bind(this)}/>
+        <ListaDeNotas notas={this.state.notas}/>
       </section>
     );
   }
