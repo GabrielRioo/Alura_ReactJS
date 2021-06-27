@@ -13,7 +13,16 @@
 ### Observações:
 * No return do **JSX**, tudo que tiver entre `{ }` é um codigo **JS**
 
-### App.js
+### EVENTOS:
+* 
+
+### ARQUIVOS:
+#### App.js
 * Onde ficarão o body do HTML
 * Usasse classes componentes como tag, afim de facilitar na reutilização de codigo, entendimento...
    * Essas classes geralmente ficam dentro da pasta **components**
+
+#### Components
+* Pasta onde armazenará as `class component`
+* Reutilização de Codigo
+* Facil entendimento
