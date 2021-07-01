@@ -5,19 +5,20 @@ class Cliente {
 
 class ContaCorrente {
   agencia;
-  saldo;
+  _saldo = 0;
 
   sacar(valor) {
-    if (this.saldo >= valor) {
-      this.saldo -= valor;
-      console.log(`Sacado: ${contaCorrenteGabriel.saldo}`);
+    if (this._saldo >= valor) {
+      this._saldo -= valor;
+      console.log(`Sacado: ${contaCorrenteGabriel._saldo}`);
     }
   }
 
   depositar(valor) {
     if (valor > 0) {
-      this.saldo += valor;
-      console.log(`Depositado: ${contaCorrenteGabriel.saldo}`);
+      this._saldo += valor;
+      console.log(`Depositado: ${contaCorrenteGabriel._saldo}`);
+      console.log(this._saldo);
     }
   }
 }
@@ -32,7 +33,7 @@ cliente2.cpf = 22233344455;
 
 const contaCorrenteGabriel = new ContaCorrente();
 contaCorrenteGabriel.agencia = 1001;
-contaCorrenteGabriel.saldo = 0;
+contaCorrenteGabriel._saldo = 10;
 console.log("Saldo Inicial: ", contaCorrenteGabriel.saldo);
 
 contaCorrenteGabriel.depositar(1000);
@@ -40,3 +41,4 @@ contaCorrenteGabriel.depositar(1000);
 contaCorrenteGabriel.sacar(1001);
 
 console.log(`Saldo Atual ${contaCorrenteGabriel.saldo}`);
+console.log(contaCorrenteGabriel);
