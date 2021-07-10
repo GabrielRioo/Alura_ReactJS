@@ -1,10 +1,8 @@
-class Cliente {
-  nome;
-  cpf;
-}
+
 
 class ContaCorrente {
   agencia;
+  //#saldo = 0
   _saldo = 0;
 
   sacar(valor) {
